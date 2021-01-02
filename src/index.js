@@ -1,19 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-// import App from './App';S
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 
-function PrintHeader(){
-  const heading1=(
-  <div>
-    <h1>Hello World</h1>
-    <p>This is a parent/ child & sibling exercise</p>
-  </div>)
-  return heading1
-}
-
-ReactDOM.render(<PrintHeader/>, document.getElementById('root')
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
 );
 
 // If you want to start measuring performance in your app, pass a function
