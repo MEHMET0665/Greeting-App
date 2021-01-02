@@ -1,28 +1,30 @@
-import React from 'react'
+import React from 'react';
+import Form from './components/Form';
 
 class App extends React.Component {
-  constructor(props){
+  constructor(props) {
     super(props);
-    this.state={
-      userName:'Guest'
+    this.state = {
+      userName: 'Guest'
     }
-    this.handleChange=this.handleChange.bind(this);
+ this.changeUserName=this.changeUserName.bind(this)
   }
 
-   handleChange(a) {
-   this.setState({
-     userName:a.target.value.trim() ? a.target.value:'Guest'
-   })
+  changeUserName(name) {
+    this.setState({
+      userName: name.trim() ? name:"Guest"
+    })
   }
+
   render() {
     return (
       <div>
         <h1>Hello {this.state.userName}</h1>
-        <label htmlFor="user_name">Enter your name:</label> <br/>
-        <input id="user_name" type="text"onInput={this.handleChange}/>
+        <Form onChange={this.changeUserName}/>
       </div>
     );
   }
 }
 
 export default App;
+
