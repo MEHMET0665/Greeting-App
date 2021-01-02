@@ -11,7 +11,7 @@ class App extends React.Component {
 
    handleChange(a) {
    this.setState({
-     userName:a.target.value
+     userName:a.target.value.trim() ? a.target.value:'Guest'
    })
   }
   render() {
